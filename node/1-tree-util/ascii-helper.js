@@ -47,6 +47,10 @@ const getPrettyAsciiTree = (obj) => {
     return buildAsciiTree(obj, '', true);
 };
 
+module.exports = {
+    getPrettyAsciiTree
+}
+
 /*
 // not working
 const buildObjectTreeString = (elements, deepLvl, parentNotLast) => {
@@ -89,4 +93,3 @@ const buildObjectTreeString = (elements, deepLvl, parentNotLast) => {
             └── 3
  */
 
-console.log(getPrettyAsciiTree(treeObj));
