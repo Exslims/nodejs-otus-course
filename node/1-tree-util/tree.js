@@ -28,8 +28,7 @@ const buildDirTree = async (node, depLvl, dirPath) => {
             if (stat.isDirectory()) {
                 const containsDirs = (await fsPromisified.readdir(childDirPath)).length > 0;
                 if (containsDirs && depLvl < maxDepLvl) {
-                    const newDep = depLvl + 1;
-                    items.push(await buildDirTree({ name: dir }, newDep, childDirPath));
+                    items.push(await buildDirTree({ name: dir }, depLvl + 1, childDirPath));
                 } else {
                     items.push({ name: dir });
                 }
